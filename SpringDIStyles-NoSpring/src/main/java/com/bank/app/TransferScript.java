@@ -20,7 +20,9 @@ public class TransferScript {
 
 	public static void main(String... args) throws InsufficientFundsException, IOException {
 
-		DataSource dataSource = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.HSQL).addScript("classpath:com/bank/config/schema.sql").addScript("classpath:com/bank/config/seed-data.sql").build();
+		DataSource dataSource = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.HSQL)
+				.addScript("classpath:com/bank/config/schema.sql")
+				.addScript("classpath:com/bank/config/seed-data.sql").build();
 
 		Properties props = new Properties();
 		props.load(TransferScript.class.getClassLoader()
