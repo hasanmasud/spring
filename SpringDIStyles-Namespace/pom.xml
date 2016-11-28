@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.smartcompute.tutorial.spring</groupId>
-	<artifactId>SpringDIStyles-XML</artifactId>
+	<artifactId>SpringDIStyles-Namespace</artifactId>
 	<version>0.0.0.1-SNAPSHOT</version>
 
 	<dependencies>
