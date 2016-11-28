@@ -8,7 +8,7 @@ public class TransferReceipt {
 	private double feeAmount;
 	private Account initialSourceAccountCopy;
 	private Account initialDestinationAccountCopy;
-	private Account finalSourceAccountCopy;
+	private Account finalSourceAccountCopy;	
 	private Account finalDestinationAccountCopy;
 
 	public void setTransferAmount(double transferAmount) {
@@ -64,5 +64,6 @@ public class TransferReceipt {
 						finalDestinationAccountCopy.getBalance()));
 		return sb.toString();
 	}
+
 
 }
