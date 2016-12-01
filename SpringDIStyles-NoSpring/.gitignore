@@ -1,4 +1,4 @@
-# Eclipse output and metadata (users should run `gradle eclipse` to generate)
+# Eclipse output and metadata 
 .classpath
 .project
 .settings
