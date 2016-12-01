@@ -5,13 +5,14 @@
 	<groupId>com.smartcompute.tutorial.spring</groupId>
 	<artifactId>BUILDALL</artifactId>
 	<version>0.0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
 	<modules>
 		<module>../Spring-Master-Pom</module>
 		<module>../SpringDIStyles-Namespace</module>
 		<module>../SpringDIStyles-NoSpring</module>
 		<module>../SpringDIStyles-XML</module>
-		<module>../SpringDISytles-Autowired-XML</module>
+		<module>../SpringDISytles-Autowired</module>
 	</modules>
 
 
