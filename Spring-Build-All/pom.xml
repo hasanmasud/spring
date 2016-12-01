@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.smartcompute.tutorial.spring</groupId>
+	<artifactId>BUILDALL</artifactId>
+	<version>0.0.0.1-SNAPSHOT</version>
+
+	<modules>
+		<module>../Spring-Master-Pom</module>
+		<module>../SpringDIStyles-Namespace</module>
+		<module>../SpringDIStyles-NoSpring</module>
+		<module>../SpringDIStyles-XML</module>
+		<module>../SpringDISytles-Autowired-XML</module>
+	</modules>
+
+
+</project>
