@@ -1,6 +1,7 @@
 # Eclipse output and metadata (users should run `gradle eclipse` to generate)
-	.classpath
-	.project
-	.settings
-	bin
+.classpath
+.project
+.settings
+bin
+target
 	
