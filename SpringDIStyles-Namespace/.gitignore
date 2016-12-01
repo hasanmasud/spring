@@ -1,1 +1,6 @@
 # Eclipse output and metadata
+.classpath
+.project
+.settings
+bin/
+target/
