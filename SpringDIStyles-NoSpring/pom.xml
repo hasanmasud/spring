@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.smartcompute.tutorial.spring</groupId>
+	<groupId>online.smartcompute.tutorial.spring</groupId>
 	<artifactId>SpringDIStyles-NoSpring</artifactId>
 	<version>0.0.0.1-SNAPSHOT</version>
 
 
 	<parent>
-		<groupId>com.smartcompute.tutorial.spring</groupId>
+		<groupId>online.smartcompute.tutorial.spring</groupId>
 		<artifactId>SPRING-MASTER-POM</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
