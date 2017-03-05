@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="theTargetBean" class="..." />
+
+	<!-- use idref -->
+	<bean id="theClientBean" class="...">
+		<property name="targetName">
+			<idref bean="theTargetBean" />
+		</property>
+	</bean>
+	<bean id="client" class="...">
+		<property name="targetName" value="theTargetBean" />
+	</bean>
+	<!-- ##################################################################################################### -->
+	<bean id="collectionDemo"
+		class="online.smartcompute.tutorial.spring.springbeandemo.CollectionDemo">
+		<!-- results in a setAdminEmails(java.util.Properties) call -->
+		<property name="adminEmails">
+			<props>
+				<prop key="administrator">administrator@example.org</prop>
+				<prop key="support">support@example.org</prop>
+				<prop key="development">development@example.org</prop>
+			</props>
+		</property>
+		<!-- results in a setSomeList(java.util.List) call -->
+		<property name="someList">
+			<list>
+				<value>a list element followed by a reference</value>
+				<ref bean="myDataSource" />
+			</list>
+		</property>
+		<!-- results in a setSomeMap(java.util.Map) call -->
+		<property name="someMap">
+			<map>
+				<entry key="an entry" value="just some string" />
+				<entry key="a ref" value-ref="myDataSource" />
+			</map>
+		</property>
+		<!-- results in a setSomeSet(java.util.Set) call -->
+		<property name="someSet">
+			<set>
+				<value>just some string</value>
+				<ref bean="myDataSource" />
+			</set>
+		</property>
+	</bean>
+
+<!-- ##################################################################################################### -->
+	<!-- empty value -->
+	<bean class="ExampleBean">
+		<property name="email" value="" />
+	</bean>
+	<!-- null value -->
+	<bean class="ExampleBean">
+		<property name="email">
+			<null />
+		</property>
+	</bean>
+
+<!-- ##################################################################################################### -->
+	<!-- p namespace -->
+	<bean name="p-namespace" class="com.example.ExampleBean" p:email="foo@bar.com" />
+	<bean name="john-classic" class="com.example.Person">
+		<property name="name" value="John Doe" />
+		<property name="spouse" ref="jane" />
+	</bean>
+	<bean name="john-modern" class="com.example.Person" p:name="John Doe"
+		p:spouse-ref="jane" />
+	<bean name="jane" class="com.example.Person">
+		<property name="name" value="Jane Doe" />
+	</bean>
+	
+<!-- ##################################################################################################### -->
+	<!-- c namespace -->
+	<bean id="bar" class="x.y.Bar" />
+	<bean id="baz" class="x.y.Baz" />
+	<!-- traditional declaration -->
+	<bean id="foo" class="x.y.Foo">
+		<constructor-arg ref="bar" />
+		<constructor-arg ref="baz" />
+		<constructor-arg value="foo@bar.com" />
+	</bean>
+	<!-- c-namespace declaration -->
+	<bean id="foo" class="x.y.Foo" c:bar-ref="bar" c:baz-ref="baz"
+		c:email="foo@bar.com" />
+
+<!-- ##################################################################################################### -->
+<bean id="classA" class="...ClassA">
+	<property name="classb.classc.attrc" value="123"></property>
+</bean>
+<!-- ##################################################################################################### -->
+<bean id="lazy" class="com.foo.ExpensiveToCreateBean" lazy-init="true"/>
+<bean name="not.lazy" class="com.foo.AnotherBean"/>
+<!-- ##################################################################################################### -->
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>
+							

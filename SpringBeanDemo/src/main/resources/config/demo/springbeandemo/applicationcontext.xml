@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="classA"
+		class="online.smartcompute.tutorial.spring.springbeandemo.ClassA"
+		factory-method="getInstance"></bean>
+
+
+	<bean id="constructorPropertiesDemo"
+		class="online.smartcompute.tutorial.spring.springbeandemo.ConstructorPropertiesDemo">
+		<constructor-arg type="int" value="7500000" />
+		<constructor-arg type="java.lang.String" value="42" />
+	</bean>
+	<bean id="constructorPropertiesDemo1"
+		class="online.smartcompute.tutorial.spring.springbeandemo.ConstructorPropertiesDemo1">
+		<constructor-arg name="years" value="7500000" />
+		<constructor-arg name="ultimateAnswer" value="42" />
+	</bean>
+
+
+	<bean id="movieFinder"
+		class="online.smartcompute.tutorial.spring.springbeandemo.MovieFinder"></bean>
+	<bean id="simpleMovieLister"
+		class="online.smartcompute.tutorial.spring.springbeandemo.SimpleMovieLister">
+		<constructor-arg ref="movieFinder"></constructor-arg>
+	</bean>
+	<bean id="simpleMovieLister1"
+		class="online.smartcompute.tutorial.spring.springbeandemo.SimpleMovieLister1">
+		<property name="movieFinder" ref="movieFinder"></property>
+	</bean>
+
+
+
+	<!-- <bean id="accountService" class="online.smartcompute.tutorial.spring.springbeandemo.SimpleAccountService"></bean> -->
+	<!-- <bean id="accountServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean"> -->
+	<!-- <property name="target"> -->
+	<!-- <ref parent="accountService"/> notice how we refer to the parent bean -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+
+
+	<bean id="parentCollection" abstract="true"
+		class="online.smartcompute.tutorial.spring.springbeandemo.CollectionDemo">
+		<property name="adminEmails">
+			<props>
+				<prop key="administrator">administrator@example.com</prop>
+				<prop key="support">support@example.com</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="childCollection" parent="parentCollection">
+		<property name="adminEmails">
+			<!-- the merge is specified on the child collection definition -->
+			<props merge="true">
+				<prop key="sales">sales@example.com</prop>
+				<prop key="support">support@example.co.uk</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="command" class="online.smartcompute.tutorial.spring.springbeandemo.Command" scope="prototype"></bean>
+	<bean id="commandManager" class="online.smartcompute.tutorial.spring.springbeandemo.CommandManager"></bean>
+
+
+	<bean id="commandManager1" class="online.smartcompute.tutorial.spring.springbeandemo.CommandManager1">
+		<lookup-method name="createCommand" bean="command" />
+	</bean>
+
+
+	<bean id="commandManager2" class="online.smartcompute.tutorial.spring.springbeandemo.CommandManager2"></bean>
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>

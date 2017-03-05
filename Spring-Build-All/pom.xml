@@ -13,6 +13,11 @@
 		<module>../SpringDIStyles-NoSpring</module>
 		<module>../SpringDIStyles-XML</module>
 		<module>../SpringDISytles-Autowired</module>
+		
+		
+		
+		
+		
 	</modules>
 
 
