@@ -1,0 +1,26 @@
+execution - for matching method execution join points, this is the primary pointcut designator you will
+use when working with Spring AOP
+
+• within - limits matching to join points within certain types (simply the execution of a method declared
+within a matching type when using Spring AOP)
+
+• this - limits matching to join points (the execution of methods when using Spring AOP) where the bean
+reference (Spring AOP proxy) is an instance of the given type
+
+• target - limits matching to join points (the execution of methods when using Spring AOP) where the
+target object (application object being proxied) is an instance of the given type
+
+• args - limits matching to join points (the execution of methods when using Spring AOP) where the
+arguments are instances of the given types
+
+• @target - limits matching to join points (the execution of methods when using Spring AOP) where the
+class of the executing object has an annotation of the given type
+
+@args - limits matching to join points (the execution of methods when using Spring AOP) where the
+runtime type of the actual arguments passed have annotations of the given type(s)
+
+• @within - limits matching to join points within types that have the given annotation (the execution of
+methods declared in types with the given annotation when using Spring AOP)
+
+• @annotation - limits matching to join points where the subject of the join point (method being executed
+in Spring AOP) has the given annotation
