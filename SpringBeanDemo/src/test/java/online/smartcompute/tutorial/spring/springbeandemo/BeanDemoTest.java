@@ -31,10 +31,14 @@ public class BeanDemoTest {
 	@Autowired
 	private CommandManager2 commandManager2;
 	
+	@Autowired
+	private SingletonDemo singleton1;
 	
+	@Autowired
+	private SingletonDemo singleton2;
 	
-	
-	
+	@Autowired
+	private SingleTonDemoTest singleTest;
 	
 
 	@Test
@@ -45,14 +49,16 @@ public class BeanDemoTest {
 		commandManager.executeCommand();
 		commandManager.executeCommand();
 		
-		
 		commandManager1.executeCommand();
 		commandManager1.executeCommand();
 		
-		
-		
 		commandManager2.executeCommand();
 		commandManager2.executeCommand();
+		
+		
+		System.out.println(singleton1.hashCode() + " " + singleton2.hashCode());
+		System.out.println(singleTest.getSinglton1().hashCode());
+		
 		
 		
 		System.out.println("END");

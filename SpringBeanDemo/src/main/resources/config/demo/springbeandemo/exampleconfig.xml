@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 							http://www.springframework.org/schema/beans/spring-beans.xsd">
 
@@ -50,7 +50,7 @@
 		</property>
 	</bean>
 
-<!-- ##################################################################################################### -->
+	<!-- ##################################################################################################### -->
 	<!-- empty value -->
 	<bean class="ExampleBean">
 		<property name="email" value="" />
@@ -62,7 +62,7 @@
 		</property>
 	</bean>
 
-<!-- ##################################################################################################### -->
+	<!-- ##################################################################################################### -->
 	<!-- p namespace -->
 	<bean name="p-namespace" class="com.example.ExampleBean" p:email="foo@bar.com" />
 	<bean name="john-classic" class="com.example.Person">
@@ -74,8 +74,8 @@
 	<bean name="jane" class="com.example.Person">
 		<property name="name" value="Jane Doe" />
 	</bean>
-	
-<!-- ##################################################################################################### -->
+
+	<!-- ##################################################################################################### -->
 	<!-- c namespace -->
 	<bean id="bar" class="x.y.Bar" />
 	<bean id="baz" class="x.y.Baz" />
@@ -89,20 +89,61 @@
 	<bean id="foo" class="x.y.Foo" c:bar-ref="bar" c:baz-ref="baz"
 		c:email="foo@bar.com" />
 
-<!-- ##################################################################################################### -->
-<bean id="classA" class="...ClassA">
-	<property name="classb.classc.attrc" value="123"></property>
-</bean>
-<!-- ##################################################################################################### -->
-<bean id="lazy" class="com.foo.ExpensiveToCreateBean" lazy-init="true"/>
-<bean name="not.lazy" class="com.foo.AnotherBean"/>
-<!-- ##################################################################################################### -->
+	<!-- ##################################################################################################### -->
+	<bean id="classA" class="...ClassA">
+		<property name="classb.classc.attrc" value="123"></property>
+	</bean>
+	<!-- ##################################################################################################### -->
+	<bean id="lazy" class="com.foo.ExpensiveToCreateBean" lazy-init="true" />
+	<bean name="not.lazy" class="com.foo.AnotherBean" />
+	<!-- ##################################################################################################### -->
 
 
+	<!-- an HTTP Session-scoped bean exposed as a proxy -->
+	<bean id="userPreferences" class="com.foo.UserPreferences" scope="session">
+		<!-- instructs the container to proxy the surrounding bean -->
+		<aop:scoped-proxy />
+	</bean>
+	<!-- a singleton-scoped bean injected with a proxy to the above bean -->
+	<bean id="userService" class="com.foo.SimpleUserService">
+		<!-- a reference to the proxied userPreferences bean -->
+		<property name="userPreferences" ref="userPreferences" />
+	</bean>
 
-
-
-
+	<!-- ##################################################################################################### -->
+	<!-- register scope -->
+	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+		<property name="scopes">
+			<map>
+				<entry key="thread">
+					<bean class="org.springframework.context.support.SimpleThreadScope" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="bar" class="x.y.Bar" scope="thread">
+		<property name="name" value="Rick" />
+		<aop:scoped-proxy />
+	</bean>
+	<bean id="foo" class="x.y.Foo">
+		<property name="bar" ref="bar" />
+	</bean>
+	<!-- ##################################################################################################### -->
+	<!-- child bean defination -->
+	<bean id="inheritedTestBean" abstract="true"
+		class="org.springframework.beans.TestBean">
+		<property name="name" value="parent" />
+		<property name="age" value="1" />
+	</bean>
+	<bean id="inheritsWithDifferentClass" class="org.springframework.beans.DerivedTestBean"
+		parent="inheritedTestBean" init-method="initialize">
+		<property name="name" value="override" />
+		<!-- the age property value of 1 will be inherited from parent -->
+	</bean>
+	<!-- ##################################################################################################### -->
+	
+	
+	
 
 
 

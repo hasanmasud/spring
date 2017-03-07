@@ -70,17 +70,20 @@
 		<lookup-method name="createCommand" bean="command" />
 	</bean>
 
-
-	<bean id="commandManager2" class="online.smartcompute.tutorial.spring.springbeandemo.CommandManager2"></bean>
-
+<!-- 	<bean id="commandManager2" class="online.smartcompute.tutorial.spring.springbeandemo.CommandManager2"></bean> -->
 
 
+<!-- #################################################################################################################################################################### -->
+	<bean id="singleton1" class="online.smartcompute.tutorial.spring.springbeandemo.SingletonDemo"></bean>
+	<bean id="singleton2" class="online.smartcompute.tutorial.spring.springbeandemo.SingletonDemo"></bean>
+	
+	<bean id="singleTest" class="online.smartcompute.tutorial.spring.springbeandemo.SingleTonDemoTest">
+		<property name="singlton1" ref="singleton1"></property>
+	</bean>
+<!-- #################################################################################################################################################################### -->
 
 
-
-
-
-
+<bean class="online.smartcompute.tutorial.spring.springbeandemo.InstantiationTracingBeanPostProcessor"/>
 
 
 
