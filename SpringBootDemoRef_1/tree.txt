@@ -1,0 +1,46 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SpringBootDemoRef 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:tree (default-cli) @ SpringBootDemoRef ---
+[INFO] online.smartcompute.tutorial.spring.boot:SpringBootDemoRef:jar:0.0.1-SNAPSHOT
+[INFO] +- org.springframework.boot:spring-boot-starter-web:jar:1.4.2.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:1.4.2.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot:jar:1.4.2.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-autoconfigure:jar:1.4.2.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:1.4.2.RELEASE:compile
+[INFO] |  |  |  +- ch.qos.logback:logback-classic:jar:1.1.7:compile
+[INFO] |  |  |  |  +- ch.qos.logback:logback-core:jar:1.1.7:compile
+[INFO] |  |  |  |  \- org.slf4j:slf4j-api:jar:1.7.21:compile
+[INFO] |  |  |  +- org.slf4j:jcl-over-slf4j:jar:1.7.21:compile
+[INFO] |  |  |  +- org.slf4j:jul-to-slf4j:jar:1.7.21:compile
+[INFO] |  |  |  \- org.slf4j:log4j-over-slf4j:jar:1.7.21:compile
+[INFO] |  |  +- org.springframework:spring-core:jar:4.3.4.RELEASE:compile
+[INFO] |  |  \- org.yaml:snakeyaml:jar:1.17:runtime
+[INFO] |  +- org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.2.RELEASE:compile
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.6:compile
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.6:compile
+[INFO] |  |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.6:compile
+[INFO] |  +- org.hibernate:hibernate-validator:jar:5.2.4.Final:compile
+[INFO] |  |  +- javax.validation:validation-api:jar:1.1.0.Final:compile
+[INFO] |  |  +- org.jboss.logging:jboss-logging:jar:3.3.0.Final:compile
+[INFO] |  |  \- com.fasterxml:classmate:jar:1.3.3:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.8.4:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.8.4:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.8.4:compile
+[INFO] |  +- org.springframework:spring-web:jar:4.3.4.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-aop:jar:4.3.4.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-beans:jar:4.3.4.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:4.3.4.RELEASE:compile
+[INFO] |  \- org.springframework:spring-webmvc:jar:4.3.4.RELEASE:compile
+[INFO] |     \- org.springframework:spring-expression:jar:4.3.4.RELEASE:compile
+[INFO] \- junit:junit:jar:4.8.2:test
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.785 s
+[INFO] Finished at: 2017-02-26T09:10:54+01:00
+[INFO] Final Memory: 20M/223M
+[INFO] ------------------------------------------------------------------------
