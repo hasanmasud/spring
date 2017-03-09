@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @EnableAutoConfiguration
-public class Example {
+public class Example1 {
 
 	public static void main(String... agrs) {
-		SpringApplication.run(Example.class, new String[] {});
+		SpringApplication.run(Example1.class, new String[] {});
 	}
 
 	@RequestMapping("/")
