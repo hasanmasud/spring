@@ -8,7 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringBootDemoRef" />
         <module name="SpringBootDemoRef (1)" />
+        <module name="SpringBootDemoRef_1" />
         <module name="SpringBootDemoRef_2" />
+        <module name="SpringBootDemoRef_3" />
         <module name="SpringBootDemoRef_4" />
       </profile>
     </annotationProcessing>
@@ -16,8 +18,11 @@
       <module name="spring" target="1.8" />
       <module name="SpringBootDemoRef" target="1.8" />
       <module name="SpringBootDemoRef (1)" target="1.8" />
+      <module name="SpringBootDemoRef_1" target="1.8" />
       <module name="SpringBootDemoRef_2" target="1.8" />
+      <module name="SpringBootDemoRef_3" target="1.8" />
       <module name="SpringBootDemoRef_4" target="1.8" />
+      <module name="springdemo" target="1.8" />
       <module name="SpringDIStyles-Namespace" target="1.5" />
       <module name="SpringDIStyles-NoSpring" target="1.5" />
     </bytecodeTargetLevel>
